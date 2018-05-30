@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.demo.dao.MessageMapper">
+ <!-- public List<Message> getMessageByCatory(int catoryId);
+    //根据问题号获得答案
+    public String getAnswerById(int messageId);-->
+    <select id="getMessageByCatory" resultType="Message" parameterType="int">
+        select * from message_detail where mcatory_id=#{_parameter}
+    </select>
+    <select id="getAnswerById" resultType="String"  parameterType="int">
+        select id,content from message_detail where id=#{_parameter}
+    </select>
+</mapper>
